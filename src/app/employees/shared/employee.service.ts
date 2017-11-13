@@ -22,13 +22,13 @@ export class EmployeeService {
   }
   //setelah jadi panggil di ngOnInit()
 
-  insertEmployee(empoloyee: Employee) {
+  insertEmployee(employee: Employee) {
     this.employeeList.push(
     {
-      name: empoloyee.name,
-      position: empoloyee.position,
-      office: empoloyee.office,
-      salary: empoloyee.salary
+      name: employee.name,
+      position: employee.position,
+      office: employee.office,
+      salary: employee.salary
     });
   }
   //setelah jadi panggil di onSubmit()

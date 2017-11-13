@@ -6,6 +6,7 @@ import { FormsModule} from '@angular/forms'
 //import ang. firebase module
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 
+import { EmployeeService } from './employees/shared/employee.service'
 import { AppComponent } from './app.component';
 import { EmployeesComponent } from './employees/employees.component';
 import { EmployeeComponent } from './employees/employee/employee.component';
@@ -20,7 +21,7 @@ import { environment } from '../environments/environment'
     AppComponent,
     EmployeesComponent,
     EmployeeComponent,
-    EmployeeListComponent
+    EmployeeListComponent,
   ],
   imports: [
     BrowserModule,
@@ -28,7 +29,7 @@ import { environment } from '../environments/environment'
     AngularFireDatabaseModule,  //here
     FormsModule
   ],
-  providers: [ ],
-  bootstrap: [AppComponent]
+  providers: [ EmployeeService ],
+  bootstrap: [ AppComponent, EmployeesComponent, EmployeeComponent, EmployeeListComponent, ]
 })
 export class AppModule { }

@@ -26,7 +26,7 @@
   </div>
 
   <div class="form-group">
-    <button type="submit" class="btn btn-primary" [disabled]="!employeeForm.valid">
+    <button type="submit" title="disabled" class="btn btn-primary" [disabled]="!employeeForm.valid">
      <i class="fa fa-floppy-o"></i> Submit</button> 
     <button type="button" class="btn btn-danger" *ngIf="employeeService.selectedEmployee.$key!=null" (click)="onDelete(employeeForm)">
         <i class="fa fa-trash"></i> Delete</button>

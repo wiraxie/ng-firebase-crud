@@ -22,11 +22,11 @@ export class EmployeeComponent implements OnInit {
 
   onSubmit(form: NgForm) {
     //fungsi insertEmployee dan update
-    if (form.value.$key == null)
+    if (form.value.$key == null) //jika primary key tidak ada, bikin baru
     {
       this.employeeService.insertEmployee(form.value);
     }
-    else
+    else //jika primary key ada update existing
     {
       this.employeeService.updateEmployee(form.value);
     }
