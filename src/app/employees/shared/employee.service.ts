@@ -20,6 +20,7 @@ export class EmployeeService {
     this.employeeList = this.firebase.list('employees');
     return this.employeeList;
   }
+  //setelah jadi panggil di ngOnInit()
 
   insertEmployee(empoloyee: Employee) {
     this.employeeList.push(
@@ -30,6 +31,7 @@ export class EmployeeService {
       salary: empoloyee.salary
     });
   }
+  //setelah jadi panggil di onSubmit()
 
   updateEmployee(emp : Employee){
      this.employeeList.update(emp.$key,{
@@ -43,5 +45,4 @@ export class EmployeeService {
   deleteEmployee(key : string){
     this.employeeList.remove(key);
   }
-
 }

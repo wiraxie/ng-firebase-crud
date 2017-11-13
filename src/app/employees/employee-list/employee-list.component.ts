@@ -6,9 +6,10 @@ import { EmployeeService } from '../shared/employee.service';
 import { Employee } from '../shared/employee.model';
 
 @Component({
-  selector: 'app-employee-list',
+  selector: 'app-employee-list', //dipakai di employees.component.html
   templateUrl: './employee-list.component.html',
-  styleUrls: ['./employee-list.component.css']
+  styleUrls: ['./employee-list.component.css'],
+  //providers : [EmployeeService],
 })
 export class EmployeeListComponent implements OnInit {
   
@@ -20,9 +21,9 @@ export class EmployeeListComponent implements OnInit {
 
   ngOnInit() 
   {
-    //ini
+    //template
+    //getData dipanggil untuk view list
     var x = this.employeeService.getData();
-
     x.snapshotChanges().subscribe(item => 
     {
       this.employeelist = [];

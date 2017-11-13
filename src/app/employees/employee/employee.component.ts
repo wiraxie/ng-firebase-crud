@@ -4,10 +4,12 @@ import { NgForm } from '@angular/forms'
 import { EmployeeService } from '../shared/employee.service';
 
 @Component({
-  selector: 'app-employee',
+  selector: 'app-employee', //dipakai di employees.component.html
   templateUrl: './employee.component.html',
-  styleUrls: ['./employee.component.css']
+  styleUrls: ['./employee.component.css'],
+  //providers : [EmployeeService],
 })
+
 export class EmployeeComponent implements OnInit {
 
   constructor(private employeeService: EmployeeService) { }
@@ -16,15 +18,23 @@ export class EmployeeComponent implements OnInit {
     this.resetForm();
   }
 
+  //untuk fungsi2 button di form
+
   onSubmit(form: NgForm) {
+    //fungsi insertEmployee dan update
     if (form.value.$key == null)
+    {
       this.employeeService.insertEmployee(form.value);
+    }
     else
+    {
       this.employeeService.updateEmployee(form.value);
+    }
     this.resetForm(form);
   }
 
   resetForm(form?: NgForm) {
+    //fungsi reset
     if (form != null)
       form.reset();
     this.employeeService.selectedEmployee = {
@@ -37,6 +47,7 @@ export class EmployeeComponent implements OnInit {
   }
 
   onDelete(form: NgForm) {
+    //fungsi deleteEmployee()
     if (confirm('Are you sure to delete this record ?') == true) {
       this.employeeService.deleteEmployee(form.value.$key);
       this.resetForm(form);
