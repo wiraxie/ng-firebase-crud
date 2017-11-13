@@ -1,7 +1,11 @@
 <ul class="list-group hover">
   <li class="list-group-item">
-    <table class="table table-striped table-responsive">
 
+  <p>
+    <span class="glyphicon glyphicon-info-sign">click any row to update/delete</span>
+  </p>
+
+    <table class="table table-striped table-responsive">
       <tr>
         <!-- <th>Key</th> -->
         <th>Name</th>
@@ -12,15 +16,14 @@
       </tr>
 
       <!-- dari employeelist: Employee[]; -->
-      <tr *ngFor="let employee of employeelist" (click)="onItemClick(employee)">
+      <tr *ngFor="let employee of employeelist" (click)="onItemClick(employee);" data-toggle="modal" data-target="#myModal" title="click to update/delete this row">
         <!-- <td>{{employee.$key}}</td> -->
         <td>{{employee.name}}</td>
         <td>{{employee.position}}</td>
         <td>{{employee.email}}</td>
         <td>{{employee.office}}</td>
         <td>{{employee.salary}}</td>
-      </tr>   
-
-    </table>
+      </tr> 
+    </table> 
   </li>
 </ul>

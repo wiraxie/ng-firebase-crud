@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 import { AngularFireModule } from 'angularfire2';
 import { FormsModule} from '@angular/forms';
 import { CustomFormsModule } from 'ng2-validation';
+import { ModalModule } from 'ngx-bootstrap';
 
 //import ang. firebase module
 import { AngularFireDatabaseModule } from 'angularfire2/database';
@@ -30,6 +31,7 @@ import { environment } from '../environments/environment'
     AngularFireDatabaseModule,  //here
     FormsModule,
     CustomFormsModule,
+    ModalModule.forRoot(),
   ],
   providers: [ EmployeeService ],
   bootstrap: [ AppComponent, EmployeesComponent, EmployeeComponent, EmployeeListComponent, ]
