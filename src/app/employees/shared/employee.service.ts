@@ -15,13 +15,16 @@ export class EmployeeService {
   //bikin obj setelah import firedatabase
   constructor(private firebase: AngularFireDatabase) { }
 
+  //template view
   getData() {
     //this.employeeList = this.firebase.list('name goes here');
     this.employeeList = this.firebase.list('employees');
     return this.employeeList;
   }
   //setelah jadi panggil di ngOnInit()
+  //end of view
 
+  //template add
   insertEmployee(employee: Employee) {
     this.employeeList.push(
     {
@@ -32,7 +35,9 @@ export class EmployeeService {
     });
   }
   //setelah jadi panggil di onSubmit()
+  //end of add
 
+  //template update
   updateEmployee(emp : Employee){
      this.employeeList.update(emp.$key,{
        name : emp.name,
@@ -41,8 +46,11 @@ export class EmployeeService {
        salary : emp.salary
      })
   }
+  //end of update
 
+  //template delete
   deleteEmployee(key : string){
     this.employeeList.remove(key);
   }
+  //end of delete
 }

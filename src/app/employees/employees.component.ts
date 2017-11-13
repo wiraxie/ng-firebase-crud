@@ -6,7 +6,9 @@ import { EmployeeService } from './shared/employee.service'
   selector: 'app-employees',
   templateUrl: './employees.component.html',
   styleUrls: ['./employees.component.css'],
-  providers :[EmployeeService], //provide Dependency Injection di module atau component
+  
+  //provide Dependency Injection di module atau component
+  //providers :[EmployeeService], 
 })
 export class EmployeesComponent implements OnInit {
 
