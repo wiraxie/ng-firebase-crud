@@ -21,16 +21,18 @@
       <div class="input-group-addon">
         <i class="fa fa-dollar"></i>
       </div>
-      <input class="form-control" name="salary" #salary="ngModel" [(ngModel)]="employeeService.selectedEmployee.salary" placeholder="Salary" required>
+      <input class="form-control" name="salary" #salary="ngModel" [(ngModel)]="employeeService.selectedEmployee.salary" placeholder="Salary" required digits>
     </div>
   </div>
 
   <div class="form-group">
     <button type="submit" title="disabled" class="btn btn-primary" [disabled]="!employeeForm.valid">
      <i class="fa fa-floppy-o"></i> Submit</button> 
+    
     <button type="button" class="btn btn-danger" *ngIf="employeeService.selectedEmployee.$key!=null" (click)="onDelete(employeeForm)">
-        <i class="fa fa-trash"></i> Delete</button>
+      <i class="fa fa-trash"></i> Delete</button>
+    
     <button type="button" class="btn btn-secondary" (click)="resetForm(employeeForm)">
-        <i class="fa fa-repeat"></i> Reset</button>
+      <i class="fa fa-repeat"></i> Reset</button>
   </div>
 </form>

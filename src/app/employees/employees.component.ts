@@ -6,7 +6,7 @@ import { EmployeeService } from './shared/employee.service'
   selector: 'app-employees',
   templateUrl: './employees.component.html',
   styleUrls: ['./employees.component.css'],
-  providers :[EmployeeService], //provide Dependency Injection
+  providers :[EmployeeService], //provide Dependency Injection di module atau component
 })
 export class EmployeesComponent implements OnInit {
 
@@ -15,7 +15,7 @@ export class EmployeesComponent implements OnInit {
 
   ngOnInit() 
   {
-    
+
   }
 
 }
