@@ -1,0 +1,20 @@
+<ul class="list-group hover">
+  <li class="list-group-item">
+    <table class="table table-striped">
+      <tr>
+        <!-- <th>Key</th> -->
+        <th>Name</th>
+        <th>Pisition</th>
+        <th>Office</th>
+        <th>Salary ($)</th>
+      </tr>
+      <tr *ngFor="let employee of employeelist" (click)="onItemClick(employee)">
+        <!-- <td>{{employee.$key}}</td> -->
+        <td>{{employee.name}}</td>
+        <td>{{employee.position}}</td>
+        <td>{{employee.office}}</td>
+        <td>{{employee.salary}}</td>
+      </tr>   
+    </table>
+  </li>
+</ul>
