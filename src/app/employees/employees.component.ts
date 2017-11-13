@@ -10,6 +10,7 @@ import { EmployeeService } from './shared/employee.service'
 })
 export class EmployeesComponent implements OnInit {
 
+  //contructor after provide import service
   constructor(private employeeService : EmployeeService) { }
 
   ngOnInit() {

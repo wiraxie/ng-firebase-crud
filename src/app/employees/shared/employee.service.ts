@@ -8,16 +8,22 @@ import { Employee } from './employee.model';
 @Injectable()
 export class EmployeeService {
   employeeList: AngularFireList<any>;
+
+  //selectedEmployee import dari employee.model
   selectedEmployee: Employee = new Employee();
+  
+  //bikin obj setelah import firedatabase
   constructor(private firebase: AngularFireDatabase) { }
 
   getData() {
+    //this.employeeList = this.firebase.list('name goes here');
     this.employeeList = this.firebase.list('employees');
     return this.employeeList;
   }
 
   insertEmployee(empoloyee: Employee) {
-    this.employeeList.push({
+    this.employeeList.push(
+    {
       name: empoloyee.name,
       position: empoloyee.position,
       office: empoloyee.office,
