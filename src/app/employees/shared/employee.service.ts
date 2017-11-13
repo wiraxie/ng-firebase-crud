@@ -28,7 +28,7 @@ export class EmployeeService {
       name: employee.name,
       position: employee.position,
       office: employee.office,
-      salary: employee.salary
+      salary: employee.salary,
     });
   }
   //setelah jadi panggil di onSubmit()
