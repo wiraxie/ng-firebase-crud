@@ -20,7 +20,8 @@ export class EmployeeComponent implements OnInit {
 
   //untuk fungsi2 button di form
 
-  onSubmit(form: NgForm) {
+  onSubmit(form: NgForm) 
+  {
     //fungsi insertEmployee dan update
     if (form.value.$key == null) //jika primary key tidak ada, bikin baru
     {
@@ -31,6 +32,8 @@ export class EmployeeComponent implements OnInit {
       this.employeeService.updateEmployee(form.value);
     }
     this.resetForm(form);
+
+    console.log('ini', NgForm);
   }
 
   resetForm(form?: NgForm) {

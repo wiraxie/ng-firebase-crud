@@ -7,13 +7,13 @@
 
   <div class="form-group">
     <label>Position</label>
-    <input class="form-control" name="position" #position="ngModel" [(ngModel)]="employeeService.selectedEmployee.position" placeholder="Position" required>
+    <input class="form-control" name="position" #position="ngModel" [(ngModel)]="employeeService.selectedEmployee.position" placeholder="Position">
   </div>
 
   <div class="form-group">
-      <label>Email</label>
-      <input class="form-control" name="email" #email="ngModel" [(ngModel)]="employeeService.selectedEmployee.email" placeholder="Email" required>
-    </div>
+    <label>Email</label>
+    <input class="form-control" name="email" #email="ngModel" [(ngModel)]="employeeService.selectedEmployee.email" placeholder="Email" required>
+  </div>
 
   <div>
   <label>office:</label>
@@ -26,14 +26,11 @@
 
   <div class="form-group">
     <label>Salary</label>
-    <input class="form-control" name="salary" #salary="ngModel" [(ngModel)]="employeeService.selectedEmployee.salary" placeholder="Salary" required digits>
+      <input class="form-control" name="salary" #salary="ngModel" [(ngModel)]="employeeService.selectedEmployee.salary" placeholder="Salary">
   </div>
 
   <div class="form-group">
-    <button type="submit" title="disabled" class="btn btn-primary" [disabled]="!employeeForm.valid" data-dismiss="modal">
-      <span class="glyphicon glyphicon-cloud-upload"></span> Submit</button> 
-    
-    <button type="button" class="btn btn-danger" *ngIf="employeeService.selectedEmployee.$key!=null" (click)="onDelete(employeeForm)" data-dismiss="modal">
-      <span class="glyphicon glyphicon-remove"></span> Delete</button>
+    <button type="submit" class="btn btn-primary" [disabled]="!employeeForm.valid">Submit</button> 
+    <button type="button" class="btn btn-danger" *ngIf="employeeService.selectedEmployee.$key!=null" (click)="onDelete(employeeForm)">Delete</button>
   </div>
 </form>
